@@ -1,153 +1,164 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>一个要清空的清单</title>
-    <style>
+  <title>一个要清空的清单</title>
+  <style>
     body {
-        background-image: url('山.png'); /* 替换 'your-image-url.jpg' 为你想要使用的图片的URL */
-        background-size: cover; /* 以覆盖整个背景区域 */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        font-family: Arial, sans-serif;
+      background-image: url('山.png');
+      /* 替换 'your-image-url.jpg' 为你想要使用的图片的URL */
+      background-size: cover;
+      /* 以覆盖整个背景区域 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
     }
 
     .container {
-        background-color: rgba(0, 0, 0, 0.4); /* 使用半透明的黑色背景 */
-        padding-top: 30px;
-        padding-bottom: 10px;
-        padding-left: 100px;
-        padding-right: 100px;
-        border-radius: 5px;
-        max-width: 600px;
-        color: rgba(255, 255, 255, 0.725); /* 使用白色字体 */
-        text-align: justify; /* 使用分散对齐方式 */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        text-align: justify;
-        flex-direction: column;
-        align-items: center; /* 将子元素在主轴上居中对齐 */
-        justify-content: center; /* 将子元素在交叉轴上居中对齐 */
-        position: relative;
-        display: flex;
+      background-color: rgba(0, 0, 0, 0.4);
+      /* 使用半透明的黑色背景 */
+      padding-top: 30px;
+      padding-bottom: 10px;
+      padding-left: 100px;
+      padding-right: 100px;
+      border-radius: 5px;
+      max-width: 600px;
+      color: rgba(255, 255, 255, 0.725);
+      /* 使用白色字体 */
+      text-align: justify;
+      /* 使用分散对齐方式 */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: justify;
+      flex-direction: column;
+      align-items: center;
+      /* 将子元素在主轴上居中对齐 */
+      justify-content: center;
+      /* 将子元素在交叉轴上居中对齐 */
+      position: relative;
+      display: flex;
     }
 
     h1 {
-        font-size: 24px;
-        margin-bottom: 20px;
+      font-size: 24px;
+      margin-bottom: 20px;
     }
 
     h2 {
-        font-size: 20px;
-        margin-bottom: 10px;
+      font-size: 20px;
+      margin-bottom: 10px;
     }
 
     ul {
-        margin-top: 0;
-        margin-bottom: 20px;
-        padding-left: 20px;
+      margin-top: 0;
+      margin-bottom: 20px;
+      padding-left: 20px;
     }
 
     li {
-        margin-bottom: 5px;
+      margin-bottom: 5px;
     }
 
     .disclaimer {
-        font-size: 12px;
-        color: #999;
-        margin-top: 60px; /* 添加与其他内容的间距 */
+      font-size: 12px;
+      color: #999;
+      margin-top: 60px;
+      /* 添加与其他内容的间距 */
     }
 
     /* 弹出框样式 */
     .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 9999;
-        display: none; /* 初始隐藏 */
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      display: none;
+      /* 初始隐藏 */
     }
 
     .modal {
-        background-color: rgba(0, 0, 0, 0.4); 
-        color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        position: relative;
-        max-width: 400px;
-        text-align: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      position: relative;
+      max-width: 400px;
+      text-align: center;
     }
 
     .close {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        color: #fff;
-        cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #fff;
+      cursor: pointer;
     }
-    </style>
+  </style>
 </head>
+
 <body>
-    <div class = "container">
-        <h1>一个要清空的清单</h1>
+  <div class="container">
+    <h1>一个要清空的清单</h1>
 
-        <h2>出行</h2>
-        <ul>
-            <li onclick="showModal('1')">川西 四姑娘山</li>
-            <li onclick="showModal('2')">云南 梅里雪山</li>
-            <li onclick="showModal('3')">青海 翡翠湖</li>
-            <li onclick="showModal('4')">舟山 花鸟/东极岛</li>
-        </ul>
-        <h2>事情</h2>
-        <ul>
-            <li onclick="showModal('101')">雅思</li>
-            <li onclick="showModal('102')">手表</li>
-        </ul>
+    <h2>出行</h2>
+    <ul>
+      <li onclick="showModal('1')">川西 四姑娘山</li>
+      <li onclick="showModal('2')">云南 梅里雪山</li>
+      <li onclick="showModal('3')">青海 翡翠湖</li>
+      <li onclick="showModal('4')">舟山 花鸟/东极岛</li>
+    </ul>
+    <h2>事情</h2>
+    <ul>
+      <li onclick="showModal('101')">关于学习雅思&nbsp; &nbsp; &nbsp;</li>
+      <li onclick="showModal('102')">关于一块手表&nbsp; &nbsp; &nbsp;</li>
+    </ul>
 
-        <p class="disclaimer">点击可阅读攻略或详情（待补充）</p>
+    <p class="disclaimer">点击可阅读攻略或详情（待补充）</p>
 
-        <!-- 弹出框内容 -->
-        <div class="overlay" id="overlay">
-            <div class="modal">
-                <span class="close" onclick="closeModal()">&times;</span>
-                <h3 id="modalText"></h3>
-            </div>
-        </div>
+    <!-- 弹出框内容 -->
+    <div class="overlay" id="overlay">
+      <div class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3 id="modalText"></h3>
+      </div>
     </div>
+  </div>
 </body>
 
 <script>
-    function showModal(text) {
-        switch (text) {
-            case '1': text = d1; break
-            case '2': text = d2; break
-            case '3': text = d3; break
-            case '4': text = d4; break
+  function showModal(text) {
+    switch (text) {
+      case '1': text = d1; break
+      case '2': text = d2; break
+      case '3': text = d3; break
+      case '4': text = d4; break
 
-            case '101': text = d101; break
-            case '102': text = d102; break
-        }
-        document.getElementById("modalText").innerText = text;
-        document.getElementById("overlay").style.display = "flex";
+      case '101': text = d101; break
+      case '102': text = d102; break
     }
+    document.getElementById("modalText").innerText = text;
+    document.getElementById("overlay").style.display = "flex";
+  }
 
-    function closeModal() {
-        document.getElementById("overlay").style.display = "none";
-    }
+  function closeModal() {
+    document.getElementById("overlay").style.display = "none";
+  }
 
-    var d1 = "四姑娘山攻略"
-    var d2 = "梅里雪山攻略"
-    var d3 = "翡翠湖攻略"
-    var d4 = "花鸟/东极岛攻略"
+  var d1 = "四姑娘山攻略"
+  var d2 = "梅里雪山攻略"
+  var d3 = "翡翠湖攻略"
+  var d4 = "花鸟/东极岛攻略"
 
-    var d101 = "费用( >=7.5 vs >=7.0 )"
-    var d102 = "if(运动)"
+  var d101 = "费用( >=7.5 vs >=7.0 )"
+  var d102 = "if(运动)"
 </script>
 
 </html>
